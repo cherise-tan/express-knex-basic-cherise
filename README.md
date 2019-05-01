@@ -2,6 +2,13 @@
 
 teaching material
 
+## Personal Learning
+* Learnt how to fork and clone a git repository
+* Introduction to yarn (package manager allowing easy download of dependencies)
+* Introduction to SQLite + DB Browser
+
+## Instructions
+
 Steps
 
 1. Install yarn if you haven't got it already https://yarnpkg.com/en/ it's a package manager so you can easily download dependencies
@@ -38,3 +45,5 @@ awesome cheat sheet for knex (way better than the above docs) - https://devhints
 basic express routing - https://expressjs.com/en/starter/basic-routing.html
 
 CRUD actions - https://www.linkedin.com/pulse/why-you-should-learn-crud-actions-leslie-alldridge/
+
+
