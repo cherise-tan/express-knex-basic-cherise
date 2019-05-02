@@ -30,19 +30,16 @@ function deleteDrug(drug, testConn) {
   const conn = testConn || connection;
   return conn("drugs")
   .where("name", drug)
-  .delete(drug) // delete drug from the DATABASE
-  .then(data => {
-    return conn("drugs").select(); //return the database
-  });
+  .delete(drug); // delete drug from the DATABASE
 }
+
 
 function getDrug(id, testConn) {
   const conn = testConn || connection;
   return conn("drugs")
     .where("id", id)
-    .first(); // return me the first item matching a particular ID (my example doesn't use this yet, but it's good to know)
+    .first(); // find the first item matching a particular ID
 }
-
 
 function updateDrug(drug, testConn) {
   const conn = testConn || connection;

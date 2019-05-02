@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Find Medicine by ID</title>
+</head>
+
+<body>
+    <h3>What is the id of the drug you would like to purchase?</h3>
+    {{!-- When the user posts this form it will create a POST request to the /get URL. the input field "id" will be available to us
+    in the route /get  --}}
+    <form action="/get" method="POST">
+        <input type="text" name="id" />
+        <button type="submit" value="submit">Find drug</button>
+    </form>
+
+    <ul>
+      {{#drugs}}
+      {{!-- If there is a valid ID selected, the drug will show up here--}}
+      <li>{{this.name}} will cost you ${{this.price}}</li>
+      {{/drugs}}
+    </ul>
+
+
+    <a href="/">Home</a>
+</body>
+
+</html>

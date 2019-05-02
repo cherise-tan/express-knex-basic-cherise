@@ -53,5 +53,20 @@ router.post("/delete", (req, res) => {
   });
 });
 
+router.get("/get", (req, res) => {
+  // user goes to the /get url
+  res.render("get"); // show them the get page
+});
+
+router.post("/get", (req, res) => {
+  db.getDrug(req.body.id) // get the drug from the DATABASE
+  .then(drugs => {
+    res.render("get", { drugs: drugs}); // re-render the 'get' page with the drug matching the selected id
+  })
+  .catch(err => {
+    res.status(500).send("DATABASE ERROR: " + err.message); //something didn't work
+  });
+});
+
 
 module.exports = router; // export the router so we can use it elsewhere if needed
