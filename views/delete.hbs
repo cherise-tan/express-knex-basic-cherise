@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Purchase Medicine</title>
+</head>
+
+<body>
+    <h3>Which drug would you like to purchase?</h3>
+    {{!-- When the user posts this form it will create a POST request to the /delete URL. the input field "name" will be available to us
+    in the route /delete  --}}
+    <ul>
+      {{#each drugs}}
+      {{!-- Displaying the list will make it easier for the user to know the available drugs for purchase--}}
+      <li>{{name}} will cost you ${{price}}</li>
+      {{/each}}
+    </ul>
+
+    <form action="/delete" method="POST">
+        <input type="text" name="name" />
+        <button type="submit" value="submit">Buy</button>
+    </form>
+    <a href="/">Home</a>
+</body>
+
+</html>

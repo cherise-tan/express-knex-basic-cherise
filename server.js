@@ -1,3 +1,5 @@
+// jshint esversion:6
+
 const express = require("express"); // we need this package and the one below
 const hbs = require("express-handlebars");
 
