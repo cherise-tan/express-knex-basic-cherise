@@ -10,8 +10,8 @@
     {{!-- When the user posts this form it will create a POST request to the /save URL. the input fields "name" and "price" will be available to us
     in the route /save  --}}
     <form action="/save" method="POST">
-        <input type="text" name="name" />
-        <input type="number" name="price" />
+        <input type="text" name="name" placeholder="drug name"/>
+        <input type="number" name="price" placeholder="drug price"/>
         <button type="submit" value="submit">Add</button>
     </form>
     <a href="/">Home</a>

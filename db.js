@@ -9,7 +9,8 @@ module.exports = {
   getDrug,
   getDrugs,
   saveDrug,
-  deleteDrug
+  deleteDrug,
+  updateDrug,
 };
 
 function getDrugs(testConn) {
@@ -33,7 +34,6 @@ function deleteDrug(drug, testConn) {
   .delete(drug); // delete drug from the DATABASE
 }
 
-
 function getDrug(id, testConn) {
   const conn = testConn || connection;
   return conn("drugs")
@@ -41,9 +41,9 @@ function getDrug(id, testConn) {
     .first(); // find the first item matching a particular ID
 }
 
-function updateDrug(drug, testConn) {
+function updateDrug(name, price, testConn) {
   const conn = testConn || connection;
-  return conn("drugs");
-  // TEMPLATE ONLY
-
+  return conn("drugs")
+  .where({name: name})  // find the name of the drug the user wishes to update
+  .update({price: price}); // update the price of the selected drug
 }

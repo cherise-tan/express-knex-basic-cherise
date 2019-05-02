@@ -68,5 +68,19 @@ router.post("/get", (req, res) => {
   });
 });
 
+router.get("/update", (req, res) => {
+  // user goes to the /update url
+  res.render("update"); //show them the get page
+});
+
+router.post("/update", (req, res) => {
+  db.updateDrug(req.body.name, req.body.price) //update the drug price in the DATABASE
+  .then(drugs => {
+    res.redirect("/"); //take them back to the home page and display all drugs
+  })
+  .catch(err => {
+    res.status(500).send("DATABASE ERROR: " + err.message); //something didn't work
+  });
+});
 
 module.exports = router; // export the router so we can use it elsewhere if needed
