@@ -6,6 +6,8 @@ teaching material
 * Learnt how to fork and clone a git repository
 * Introduction to yarn (package manager allowing easy download of dependencies)
 * Introduction to SQLite + DB Browser
+* Introduction to Handlebars (for templating)
+* Introduction to Knex.js (for SQL Queries)
 
 ## Instructions
 
